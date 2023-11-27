@@ -1,0 +1,13 @@
+name: Mammdoo Image Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - v[0-9].[0-9]+.[0-9]+
+      - '[0-9].[0-9]+.[0-9]+'
+
+jobs:
+  Image:
+    secrets: inherit
+    uses: mammdoo/actions-reusable-workflow/.github/workflows/scaffold-base-image.yml@main
